@@ -32,12 +32,11 @@ for (var i = 0, l = images.length; i < l; i++) {
   images[i].src = 'http://placekitten.com/' + images[i].width + '/' + images[i].height;
 }
 
-/*
 document.addEventListener("click", function() {
   var firstHref = "https://www.youtube.com/watch?v=n7zMZ-7Dk8E&list=PLfAUOI05WS6UxAEVmhMe6U8SOYVyNCxNy";
   chrome.runtime.sendMessage({"message": "open_new_tab", "url": firstHref});
 }, false);
-*/
+
 /*
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
