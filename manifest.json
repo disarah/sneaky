@@ -13,22 +13,25 @@
 {
   // Required
   "manifest_version": 2,
-  "name": "Cal to Butt",
+  "name": "sneaky",
   "version": "0.0.1",
+  "background": {
+    "scripts": ["/src/background.js"]
+  },
 
   // Recommended
-  "description": "Chrome Extension Hackpack @ TreeHacks 2019",
+  "description": "Single Chrome Extensions in Your Area",
   "icons": {
-    "16": "icons/TreeHacks-white-16.png",
-    "32": "icons/TreeHacks-white-32.png",
-    "48": "icons/TreeHacks-white-48.png",
-    "64": "icons/TreeHacks-white-64.png",
-    "96": "icons/TreeHacks-white-96.png",
-    "128": "icons/TreeHacks-white-128.png"
+    "16": "icons/heart_16.png",
+    "32": "icons/heart_32.png",
+    "48": "icons/heart_48.png",
+    "64": "icons/heart_64.png",
+    "96": "icons/heart_96.png",
+    "128": "icons/heart_128.png"
   },
 
   // Optional
-  "homepage_url": "https://www.treehacks.com/",
+  "homepage_url": "https://github.com/disarah/sneaky",
 
   // Put any additional permissions your applications needs here.
   // For a list of possibilities, see
@@ -40,16 +43,17 @@
   // Probably will not need to be modified unless you *really*
   // know what you're doing
   "browser_action": {
-    "default_icon": "icons/TreeHacks-white-19.png",
-    "default_title": "Cal to Butt",
-    "default_popup": "src/popup.html"
+    "default_icon": "icons/heart_128.png",
+    "default_title": "sneaky"
   },
   "content_scripts": [
     {
       "matches": [
         "*://*/*"
       ],
+      "css": ["background.css"],
       "js": [
+        "jquery-2.2.4.min.js",
         "/src/content.js"
       ],
       "run_at": "document_end"

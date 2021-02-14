@@ -1,0 +1,21 @@
+body {
+  background: url("./heart_16.png") !important;
+
+  /*background-image:url('/icons/background.GIF') !important; background-repeat:repeat !important;*/
+  /*cursor: url('/icons/mouse.png'), auto;*/
+}
+
+#masthead,
+#primary {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  background-color: #fff;
+  padding: 20px !important;
+}
+#masthead {
+  background: none;
+}
+#masthead img, #primary img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
