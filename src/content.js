@@ -18,7 +18,7 @@ for (var i = 0; i < elements.length; i++) {
 
         if (node.nodeType === 3) {
             var text = node.nodeValue;
-            var replacedText = text.replace(/cal/gi, "butt"); // replaces "cal," "Cal", etc. with "butt"
+            var replacedText = text.replace(/cal/gi, "butter"); // replaces "cal," "Cal", etc. with "butt"
 
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
@@ -26,3 +26,15 @@ for (var i = 0; i < elements.length; i++) {
         }
     }
 }
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if( request.message === "clicked_browser_action" ) {
+      var firstHref = "https://www.youtube.com/watch?v=n7zMZ-7Dk8E&list=PLfAUOI05WS6UxAEVmhMe6U8SOYVyNCxNy";
+
+      console.log(firstHref);
+
+      chrome.runtime.sendMessage({"message": "open_new_tab", "url": firstHref});
+    }
+  }
+);

@@ -15,6 +15,9 @@
   "manifest_version": 2,
   "name": "sneaky",
   "version": "0.0.1",
+  "background": {
+    "scripts": ["/src/background.js"]
+  },
 
   // Recommended
   "description": "Single Chrome Extensions in Your Area",
@@ -41,8 +44,7 @@
   // know what you're doing
   "browser_action": {
     "default_icon": "icons/TreeHacks-white-19.png",
-    "default_title": "sneaky",
-    "default_popup": "src/popup.html"
+    "default_title": "sneaky"
   },
   "content_scripts": [
     {
@@ -50,6 +52,7 @@
         "*://*/*"
       ],
       "js": [
+        "jquery-2.2.4.min.js",
         "/src/content.js"
       ],
       "run_at": "document_end"
